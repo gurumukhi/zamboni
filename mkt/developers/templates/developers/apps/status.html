@@ -374,8 +374,8 @@
           {% endif %}
           <p class="listing-footer">
             {% if test_plan %}
-              {%- trans %}
-                Update your test plan
+              {%- trans lnk_url=addon.get_dev_url('preload_' + next_step_suffix) %}
+                <a href="{{ lnk_url }}">Update your test plan</a>
               {% endtrans -%}
             {% else %}
               {%- trans lnk_url=addon.get_dev_url('preload_' + next_step_suffix) %}
