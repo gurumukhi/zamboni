@@ -373,9 +373,16 @@
               {{ _('View your most recently submitted test plan') }}</a></p>
           {% endif %}
           <p class="listing-footer">
-            {% trans lnk_url=addon.get_dev_url('preload_' + next_step_suffix) %}
-              <a href="{{ lnk_url }}">Learn how</a> to get your app pre-installed on Firefox OS devices
-            {% endtrans %}
+            {% if test_plan %}
+              {%- trans %}
+                Update your test plan
+              {% endtrans -%}
+            {% else %}
+              {%- trans lnk_url=addon.get_dev_url('preload_' + next_step_suffix) %}
+                <a href="{{ lnk_url }}">Learn how</a> to get your app pre-installed on Firefox OS devices.
+              {% endtrans -%}
+            {% endif %}
+         </p>
         </div>
       </section>
     {% endif %}
